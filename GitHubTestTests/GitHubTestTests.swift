@@ -5,32 +5,33 @@
 //  Created by Volodymyr Milichenko on 24/01/2024.
 //
 
+import CoreData
 import XCTest
 @testable import GitHubTest
 
-final class GitHubTestTests: XCTestCase {
+final class CoreDataCacheTests: XCTestCase {
+    private let coreDataCache = CoreDataCache(storageType: .inMemory)
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testSave() throws {
+        let users = [
+            User(id: 1, name: "name1", avatarUrl: "avatarUrl1"),
+            User(id: 2, name: "name2", avatarUrl: "avatarUrl2"),
+        ]
+        
+        coreDataCache.saveObjects(users)
+        
+        let cachedUsers = coreDataCache.fetchObjects()
+        XCTAssertNotNil(cachedUsers)
+        XCTAssertEqual(users.count, cachedUsers.count)
+        
+        let first = cachedUsers.first
+        XCTAssertEqual(first?.id, 1)
+        XCTAssertEqual(first?.name, "name1")
+        XCTAssertEqual(first?.avatarUrl, "avatarUrl1")
+        
+        let last = cachedUsers.last
+        XCTAssertEqual(last?.id, 2)
+        XCTAssertEqual(last?.name, "name2")
+        XCTAssertEqual(last?.avatarUrl, "avatarUrl2")
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }
