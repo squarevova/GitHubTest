@@ -18,6 +18,7 @@
 		E7DD5B252B6172D600E90C54 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5B242B6172D600E90C54 /* GitHubAPI.swift */; };
 		E7DD5B272B6172FC00E90C54 /* GitHubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5B262B6172FC00E90C54 /* GitHubAPIClient.swift */; };
 		E7DD5B2C2B617F9600E90C54 /* UsersListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5B2B2B617F9600E90C54 /* UsersListViewModel.swift */; };
+		E7DD5B2E2B619A9F00E90C54 /* UserDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5B2D2B619A9F00E90C54 /* UserDetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		E7DD5B242B6172D600E90C54 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
 		E7DD5B262B6172FC00E90C54 /* GitHubAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIClient.swift; sourceTree = "<group>"; };
 		E7DD5B2B2B617F9600E90C54 /* UsersListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListViewModel.swift; sourceTree = "<group>"; };
+		E7DD5B2D2B619A9F00E90C54 /* UserDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserDetailsView.swift; path = GitHubTest/Flow/UserDetails/UserDetailsView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		E7DD5B292B617F6A00E90C54 /* Flow */ = {
 			isa = PBXGroup;
 			children = (
+				E7DD5B2F2B619CBC00E90C54 /* UserDetails */,
 				E7DD5B2A2B617F7300E90C54 /* UsersList */,
 			);
 			path = Flow;
@@ -169,6 +172,14 @@
 				E7DD5AF32B613FC000E90C54 /* UsersListView.swift */,
 			);
 			path = UsersList;
+			sourceTree = "<group>";
+		};
+		E7DD5B2F2B619CBC00E90C54 /* UserDetails */ = {
+			isa = PBXGroup;
+			children = (
+				E7DD5B2D2B619A9F00E90C54 /* UserDetailsView.swift */,
+			);
+			path = UserDetails;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +319,7 @@
 				E7DD5B252B6172D600E90C54 /* GitHubAPI.swift in Sources */,
 				E7DD5B2C2B617F9600E90C54 /* UsersListViewModel.swift in Sources */,
 				E7DD5B1D2B6170B700E90C54 /* UsersRepositoryType.swift in Sources */,
+				E7DD5B2E2B619A9F00E90C54 /* UserDetailsView.swift in Sources */,
 				E7DD5AF22B613FC000E90C54 /* GitHubTestApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

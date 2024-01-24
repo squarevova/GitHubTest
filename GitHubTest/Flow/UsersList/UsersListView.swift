@@ -15,7 +15,11 @@ struct UsersListView: View {
         NavigationStack {
             List {
                 ForEach(searchResults, id: \.id) { user in
-                    Text(user.name)
+                    NavigationLink {
+                        UserDetailsView(user: user)
+                    } label: {
+                        Text(user.name)
+                    }
                 }
             }
             .navigationTitle("Users")
