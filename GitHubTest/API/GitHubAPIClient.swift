@@ -15,7 +15,7 @@ enum GitHubAPIClientError: Error {
     case serverEror(Int)
 }
 
-final class GitHubAPIClient {
+final class GitHubAPIClient: GitHubAPI {
     private let accessToken = "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"
 
     func fetchUsers() async throws -> [User] {

@@ -6,22 +6,21 @@
 //
 
 import Combine
+import SwiftUI
 
 @MainActor
 final class UsersListViewModel: ObservableObject {
     @Published var users = [User]()
     
-//    private let usersRepository: UsersRepositoryType
-//    
-//    init(usersRepository: UsersRepositoryType) {
-//        self.usersRepository = usersRepository
-//    }
+    private let usersRepository: UsersRepositoryType
     
-    private let usersAPI = GitHubAPIClient()
+    init(usersRepository: UsersRepositoryType = UsersRepository()) {
+        self.usersRepository = usersRepository
+    }
     
     func fetchUsers() async {
         do {
-            users = try await usersAPI.fetchUsers()
+            users = try await usersRepository.fetchUsers()
         } catch {
             assertionFailure("Error while fetching users")
         }

@@ -9,19 +9,35 @@ import SwiftUI
 
 struct UsersListView: View {
     @StateObject private var usersViewModel = UsersListViewModel()
+    @State private var searchText = ""
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(usersViewModel.users, id: \.id) { user in
+                ForEach(searchResults, id: \.id) { user in
                     Text(user.name)
                 }
             }
+            .navigationTitle("Users")
         }
+        .searchable(text: $searchText)
         .task {
             await usersViewModel.fetchUsers()
         }
-        .navigationTitle("Users")
+    }
+    
+    private var searchResults: [User] {
+        if searchText.isEmpty {
+            return usersViewModel.users
+        } else {
+            return usersViewModel.users.filter {
+                $0.name.contains(
+                    searchText
+                        .lowercased()
+                        .trimmingCharacters(in: .whitespacesAndNewlines)
+                )
+            }
+        }
     }
 }
 

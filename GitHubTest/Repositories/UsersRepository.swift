@@ -6,7 +6,13 @@
 //
 
 final class UsersRepository: UsersRepositoryType {
-    func fetchUsers() -> [User] {
-        []
+    private let api: GitHubAPI
+    
+    init(api: GitHubAPI = GitHubAPIClient()) {
+        self.api = api
+    }
+    
+    func fetchUsers() async throws -> [User] {
+        try await api.fetchUsers()
     }
 }
