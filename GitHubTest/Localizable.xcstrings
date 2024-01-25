@@ -1,0 +1,24 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "users" : {
+      "comment" : "Users title",
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Users"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Юзери"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

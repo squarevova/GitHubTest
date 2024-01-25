@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E7CCCFDA2B62774E00CB7EB2 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E7CCCFD92B62774E00CB7EB2 /* Localizable.xcstrings */; };
 		E7DD5AF22B613FC000E90C54 /* GitHubTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5AF12B613FC000E90C54 /* GitHubTestApp.swift */; };
 		E7DD5AF42B613FC000E90C54 /* UsersListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DD5AF32B613FC000E90C54 /* UsersListView.swift */; };
 		E7DD5AF62B613FC200E90C54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7DD5AF52B613FC200E90C54 /* Assets.xcassets */; };
@@ -33,16 +34,10 @@
 			remoteGlobalIDString = E7DD5AED2B613FC000E90C54;
 			remoteInfo = GitHubTest;
 		};
-		E7DD5B092B613FC200E90C54 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E7DD5AE62B613FC000E90C54 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E7DD5AED2B613FC000E90C54;
-			remoteInfo = GitHubTest;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E7CCCFD92B62774E00CB7EB2 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E7DD5AEE2B613FC000E90C54 /* GitHubTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7DD5AF12B613FC000E90C54 /* GitHubTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubTestApp.swift; sourceTree = "<group>"; };
 		E7DD5AF32B613FC000E90C54 /* UsersListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListView.swift; sourceTree = "<group>"; };
@@ -72,13 +67,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E7DD5AFB2B613FC200E90C54 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DD5B052B613FC200E90C54 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -117,6 +105,7 @@
 				E7DD5AF12B613FC000E90C54 /* GitHubTestApp.swift */,
 				E7DD5AF52B613FC200E90C54 /* Assets.xcassets */,
 				E7DD5AF72B613FC200E90C54 /* Preview Content */,
+				E7CCCFD92B62774E00CB7EB2 /* Localizable.xcstrings */,
 			);
 			path = GitHubTest;
 			sourceTree = "<group>";
@@ -263,9 +252,6 @@
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = E7DD5AED2B613FC000E90C54;
 					};
-					E7DD5B072B613FC200E90C54 = {
-						CreatedOnToolsVersion = 15.0.1;
-					};
 				};
 			};
 			buildConfigurationList = E7DD5AE92B613FC000E90C54 /* Build configuration list for PBXProject "GitHubTest" */;
@@ -275,6 +261,7 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
 			);
 			mainGroup = E7DD5AE52B613FC000E90C54;
 			productRefGroup = E7DD5AEF2B613FC000E90C54 /* Products */;
@@ -294,17 +281,11 @@
 			files = (
 				E7DD5AF92B613FC200E90C54 /* Preview Assets.xcassets in Resources */,
 				E7DD5AF62B613FC200E90C54 /* Assets.xcassets in Resources */,
+				E7CCCFDA2B62774E00CB7EB2 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		E7DD5AFC2B613FC200E90C54 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E7DD5B062B613FC200E90C54 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -342,13 +323,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E7DD5B042B613FC200E90C54 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -356,11 +330,6 @@
 			isa = PBXTargetDependency;
 			target = E7DD5AED2B613FC000E90C54 /* GitHubTest */;
 			targetProxy = E7DD5AFF2B613FC200E90C54 /* PBXContainerItemProxy */;
-		};
-		E7DD5B0A2B613FC200E90C54 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E7DD5AED2B613FC000E90C54 /* GitHubTest */;
-			targetProxy = E7DD5B092B613FC200E90C54 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

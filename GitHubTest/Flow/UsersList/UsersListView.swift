@@ -22,7 +22,7 @@ struct UsersListView: View {
                     }
                 }
             }
-            .navigationTitle("Users")
+            .navigationTitle("users")
         }
         .searchable(text: $searchText)
         .task {
@@ -45,6 +45,12 @@ struct UsersListView: View {
     }
 }
 
-#Preview {
+#Preview("en") {
     UsersListView()
+        .environment(\.locale, .init(identifier: "en"))
+}
+
+#Preview("uk") {
+    UsersListView()
+        .environment(\.locale, .init(identifier: "uk"))
 }
