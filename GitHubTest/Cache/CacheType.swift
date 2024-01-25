@@ -10,5 +10,4 @@ protocol CacheType<CacheObject> {
     
     func fetchObjects() -> [CacheObject]
     func saveObjects(_ objects: [CacheObject])
-    func clearStorage()
 }

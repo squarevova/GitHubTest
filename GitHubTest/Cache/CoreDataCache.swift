@@ -7,10 +7,6 @@
 
 import CoreData
 
-enum StorageType {
-  case persistent, inMemory
-}
-
 final class CoreDataCache {
     private let persistentContainer: NSPersistentContainer
     
@@ -28,19 +24,6 @@ final class CoreDataCache {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-    }
-
-    private func saveContext() {
-        let context = persistentContainer.viewContext
-        
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
-        }
     }
     
     private func clearStorageForEntity(entityName: String) {
@@ -83,6 +66,7 @@ extension CoreDataCache: CacheType {
     }
     
     func saveObjects(_ objects: [User]) {
+        clearStorageForEntity(entityName: String(describing: UserManagedObject.self))
         let context = persistentContainer.newBackgroundContext()
         
         context.performAndWait {
@@ -110,13 +94,8 @@ extension CoreDataCache: CacheType {
                 } catch {
                     assertionFailure("CoreData saving error")
                 }
-                
             }
         }
-    }
-    
-    func clearStorage() {
-        clearStorageForEntity(entityName: String(describing: UserManagedObject.self))
     }
 }
 

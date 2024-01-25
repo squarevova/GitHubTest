@@ -25,7 +25,6 @@ final class UsersRepository: UsersRepositoryType {
     }
     
     func fetchUsers() async throws -> [User] {
-        return cache.fetchObjects()
         if networkMonitor.isReachable {
             let users = try await api.fetchUsers()
             cache.saveObjects(users)

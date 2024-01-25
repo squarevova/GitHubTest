@@ -16,6 +16,7 @@ enum GitHubAPIClientError: Error {
 }
 
 final class GitHubAPIClient: GitHubAPI {
+    #warning("TODO: just for testing purposes")
     private let accessToken = "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"
 
     func fetchUsers() async throws -> [User] {
@@ -23,7 +24,9 @@ final class GitHubAPIClient: GitHubAPI {
             throw GitHubAPIClientError.invalidURL
         }
         
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        request.setValue("application/vnd.github+json", forHTTPHeaderField: "accept")
+        
         let (data, response) = try await URLSession(configuration: .default).data(for: request)
         
         guard let httpUrlResponse = response as? HTTPURLResponse else {
