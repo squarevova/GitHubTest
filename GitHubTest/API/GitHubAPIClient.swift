@@ -33,9 +33,6 @@ extension GitHubAPIClientError: CustomStringConvertible {
 }
 
 final class GitHubAPIClient: GitHubAPI {
-    #warning("TODO: just for testing purposes")
-    private let accessToken = "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"
-
     func fetchUsers() async throws -> [User] {
         guard let url = URL(string: "https://api.github.com/users") else {
             throw GitHubAPIClientError.invalidURL
