@@ -15,6 +15,23 @@ enum GitHubAPIClientError: Error {
     case serverEror(Int)
 }
 
+extension GitHubAPIClientError: CustomStringConvertible {
+    var description: String {
+        switch self {
+        case .invalidURL:
+            "Invalid URL"
+        case .badResponse:
+            "Invalied response"
+        case .unauthorized:
+            "Unauthorized"
+        case let .clientError(code, data):
+            "Client error with code: \(code), data: \(String(data: data, encoding: .utf8) ?? "")"
+        case .serverEror(let code):
+            "Server error with code: \(code)"
+        }
+    }
+}
+
 final class GitHubAPIClient: GitHubAPI {
     #warning("TODO: just for testing purposes")
     private let accessToken = "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"

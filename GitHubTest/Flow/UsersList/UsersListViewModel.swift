@@ -22,7 +22,7 @@ final class UsersListViewModel: ObservableObject {
         do {
             users = try await usersRepository.fetchUsers()
         } catch {
-            assertionFailure("Error while fetching users \(error)")
+            assertionFailure("Error while fetching users: \(error)")
         }
     }
 }
