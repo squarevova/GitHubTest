@@ -9,6 +9,8 @@ struct User {
     let id: Int
     let name: String
     let avatarUrl: String
+    let followersUrl: String
+    let reposUrl: String
 }
 
 extension User: Codable {
@@ -16,5 +18,13 @@ extension User: Codable {
         case id
         case name = "login"
         case avatarUrl = "avatar_url"
+        case followersUrl = "followers_url"
+        case reposUrl = "repos_url"
+    }
+}
+
+extension User: Equatable {
+    static func == (lhs: User, rhs: User) -> Bool {
+        lhs.id == rhs.id
     }
 }

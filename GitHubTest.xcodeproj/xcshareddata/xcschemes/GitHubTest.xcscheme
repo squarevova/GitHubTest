@@ -20,23 +20,53 @@
                ReferencedContainer = "container:GitHubTest.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E7419B762C4076B7003AA117"
+               BuildableName = "GitHubTestTests.xctest"
+               BlueprintName = "GitHubTestTests"
+               ReferencedContainer = "container:GitHubTest.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
+      <TestPlans>
+         <TestPlanReference
+            reference = "container:GitHubTestTests/GitHubTestPlan.xctestplan"
+            default = "YES">
+         </TestPlanReference>
+      </TestPlans>
       <Testables>
          <TestableReference
             skipped = "NO"
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7DD5AFD2B613FC200E90C54"
+               BlueprintIdentifier = "E7419B762C4076B7003AA117"
                BuildableName = "GitHubTestTests.xctest"
                BlueprintName = "GitHubTestTests"
+               ReferencedContainer = "container:GitHubTest.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "YES"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E7DD5B072B613FC200E90C54"
+               BuildableName = "GitHubTestUITests.xctest"
+               BlueprintName = "GitHubTestUITests"
                ReferencedContainer = "container:GitHubTest.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -45,9 +75,9 @@
             parallelizable = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E7DD5B072B613FC200E90C54"
-               BuildableName = "GitHubTestUITests.xctest"
-               BlueprintName = "GitHubTestUITests"
+               BlueprintIdentifier = "E7419B762C4076B7003AA117"
+               BuildableName = "GitHubTestTests.xctest"
+               BlueprintName = "GitHubTestTests"
                ReferencedContainer = "container:GitHubTest.xcodeproj">
             </BuildableReference>
          </TestableReference>

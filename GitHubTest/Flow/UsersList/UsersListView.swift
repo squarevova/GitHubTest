@@ -14,11 +14,26 @@ struct UsersListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(searchResults, id: \.id) { user in
+                ForEach(usersViewModel.filteredUsers(filter: searchText), id: \.id) { user in
                     NavigationLink {
                         UserDetailsView(user: user)
                     } label: {
-                        Text(user.name)
+                        HStack {
+                            AsyncImage(url: URL(string: user.avatarUrl)) { phase in
+                                if let image = phase.image {
+                                    image
+                                        .resizable()
+                                        .scaledToFit()
+                                } else {
+                                    Image("Placeholder")
+                                        .resizable()
+                                        .scaledToFit()
+                                }
+                            }
+                            .frame(width: 64, height: 64)
+                            
+                            Text(user.name)
+                        }
                     }
                 }
             }
@@ -29,28 +44,8 @@ struct UsersListView: View {
             await usersViewModel.fetchUsers()
         }
     }
-    
-    private var searchResults: [User] {
-        if searchText.isEmpty {
-            return usersViewModel.users
-        } else {
-            return usersViewModel.users.filter {
-                $0.name.contains(
-                    searchText
-                        .lowercased()
-                        .trimmingCharacters(in: .whitespacesAndNewlines)
-                )
-            }
-        }
-    }
 }
 
-#Preview("en") {
+#Preview {
     UsersListView()
-        .environment(\.locale, .init(identifier: "en"))
-}
-
-#Preview("uk") {
-    UsersListView()
-        .environment(\.locale, .init(identifier: "uk"))
 }

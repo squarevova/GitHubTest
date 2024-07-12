@@ -28,5 +28,13 @@ struct UserDetailsView: View {
 }
 
 #Preview {
-    UserDetailsView(user: User(id: 1, name: "Test", avatarUrl: ""))
+    UserDetailsView(
+        user: User(
+            id: 1,
+            name: "Test",
+            avatarUrl: "",
+            followersUrl: "",
+            reposUrl: ""
+        )
+    )
 }

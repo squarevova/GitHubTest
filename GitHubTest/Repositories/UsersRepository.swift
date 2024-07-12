@@ -5,19 +5,24 @@
 //  Created by Volodymyr Milichenko on 24/01/2024.
 //
 
+import Foundation
+
 final class UsersRepository: UsersRepositoryType {
     private let api: GitHubAPI
     private let cache: any CacheType<User>
-    private let networkMonitor = NetworkMonitor()
+    private let networkMonitor: NetworkMonitorType
     
     init(
-        api: GitHubAPI = GitHubAPIClient(),
-        cache: any CacheType<User> = CoreDataCache()
+        api: GitHubAPI = GitHubAPIClient(
+            sessionClient: URLSessionClient(baseURL: Bundle.main.apiBaseUrl)
+        ),
+        cache: any CacheType<User> = CoreDataCache(),
+        networkMonitor: NetworkMonitorType = NetworkMonitor()
     ) {
         self.api = api
         self.cache = cache
-        
-        networkMonitor.start()
+        self.networkMonitor = networkMonitor
+        self.networkMonitor.start()
     }
     
     deinit {
@@ -31,7 +36,7 @@ final class UsersRepository: UsersRepositoryType {
             
             return users
         } else {
-            return cache.fetchObjects()
+            return cache.loadObjects() ?? []
         }
     }
 }

@@ -1,0 +1,16 @@
+[
+    {
+        "login": "mojombo",
+        "id": 1,
+        "avatar_url": "https://avatars.githubusercontent.com/u/1?v=4",
+        "followers_url": "https://api.github.com/users/mojombo/followers",
+        "repos_url": "https://api.github.com/users/mojombo/repos"
+    },
+    {
+        "login": "defunkt",
+        "id": 2,
+        "avatar_url": "https://avatars.githubusercontent.com/u/2?v=4",
+        "followers_url": "https://api.github.com/users/defunkt/followers",
+        "repos_url": "https://api.github.com/users/defunkt/repos"
+    }
+]

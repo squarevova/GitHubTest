@@ -8,6 +8,6 @@
 protocol CacheType<CacheObject> {
     associatedtype CacheObject
     
-    func fetchObjects() -> [CacheObject]
+    func loadObjects() -> [CacheObject]?
     func saveObjects(_ objects: [CacheObject])
 }

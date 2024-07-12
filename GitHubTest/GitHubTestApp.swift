@@ -8,10 +8,26 @@
 import SwiftUI
 
 @main
+struct AppLauncher {
+    static func main() throws {
+        if ProcessInfo.processInfo.environment["isTesting"] == "true" {
+            TestApp.main()
+        } else {
+            GitHubTestApp.main()
+        }
+    }
+}
+
 struct GitHubTestApp: App {
     var body: some Scene {
         WindowGroup {
             UsersListView()
         }
+    }
+}
+
+struct TestApp: App {
+    var body: some Scene {
+        WindowGroup {}
     }
 }

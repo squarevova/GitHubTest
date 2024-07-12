@@ -7,7 +7,7 @@
 
 import Network
 
-final class NetworkMonitor {
+final class NetworkMonitor: NetworkMonitorType {
     private let monitor = NWPathMonitor()
     private var status: NWPath.Status = .requiresConnection
 
@@ -20,7 +20,7 @@ final class NetworkMonitor {
             self?.status = path.status
         }
 
-        let queue = DispatchQueue(label: "NetworkMonitor")
+        let queue = DispatchQueue(label: "com.test.github")
         monitor.start(queue: queue)
     }
 

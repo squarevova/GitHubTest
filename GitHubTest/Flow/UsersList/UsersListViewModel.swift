@@ -25,4 +25,18 @@ final class UsersListViewModel: ObservableObject {
             assertionFailure("Error while fetching users: \(error)")
         }
     }
+    
+    func filteredUsers(filter: String = "") -> [User] {
+        if filter.isEmpty {
+            return users
+        } else {
+            return users.filter {
+                $0.name.contains(
+                    filter
+                        .lowercased()
+                        .trimmingCharacters(in: .whitespacesAndNewlines)
+                )
+            }
+        }
+    }
 }
